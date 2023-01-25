@@ -1,0 +1,11 @@
+FROM redhat/ubi8
+
+COPY script-library/*.sh /tmp/library-scripts/
+
+ARG USERNAME=vscode
+ARG USER_UID=1000
+ARG USER_GID=$USER_UID
+
+RUN bash /tmp/library-scripts/common-redhat.sh
+RUN bash /tmp/library-scripts/install-sdkman.sh
+RUN yum clean all && rm -rf /tmp/library-scripts

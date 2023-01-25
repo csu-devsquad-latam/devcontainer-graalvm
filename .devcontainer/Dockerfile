@@ -1,0 +1,1 @@
+FROM howlowck/ubi-graalvm:1.0
